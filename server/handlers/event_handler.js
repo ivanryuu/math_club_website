@@ -2,7 +2,7 @@ var Event = require('./../models/event');
 
 var EventHandler = {
 	get: function(title, res) {
-		if(!title) return this.list(res);
+		if(!past) return this.list(res);
 		Event.findOne({name: name}, function(err, events) {
 			if(err) throw err;
 
@@ -10,8 +10,11 @@ var EventHandler = {
 			res.status(200).end();
 		});
 	},
-	list: function(res) {
-		Event.find({}, function(err, events) {
+	list: function(past, res) {
+		var date = new Date();
+		past = past == 'past';
+		var query = past? { time: {$lte: date}} : {time: {$gte: date}};
+		Event.find(query, function(err, events) {
 			if(err) throw err;
 			res.send(events);
 			res.status(200).end();

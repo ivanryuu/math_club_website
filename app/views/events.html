@@ -79,17 +79,17 @@
 							</a>
 						</article>
 						<div class="row 150%">
-							<div class="12u 12u(mobile)" ng-repeat="event in events">
+							<div class="12u 12u(mobile)" ng-repeat="event in upcomingEvents">
 								<section class="box" ng-init="event.show = false">
 									<header>
 										<h2>{{event.title}}</h2>
 									</header>
 									<a href="#" class="image featured"><img src="{{event.pictureUrl}}" onerror="this.src='images/default-event.jpg'" alt="" border="5"/></a>
 									<h4>{{event.location}}</h4>
-									<h4>{{event.time | date:'EEE, MMM dd, yyyy hh a'}}</h4>
+									<h4>{{event.time | date:'EEE, MMM dd, yyyy hh:mm a'}}</h4>
 									<p>{{event.description}}</p>
 									<p ng-hide="!event.show">{{event.abstract}}</p>
-									<button class="button style1" ng-click="event.show = !event.show">Toggle abstract</a>
+									<button ng-if="event.abstract" class="button style1" ng-click="event.show = !event.show">Toggle abstract</a>
 									
 								</section>
 							</div>
@@ -103,34 +103,14 @@
 
 <!-- Highlights -->
 <div class="wrapper style3">
-	<div class="title">The Endorsements</div>
+	<div class="title">Past Events</div>
 	<div id="highlights" class="container">
 		<div class="row 150%">
-			<div class="4u 12u(mobile)">
+			<div class="6u 12u(mobile)" ng-repeat="event in pastEvents">
 				<section class="highlight">
-					<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-					<h3><a href="#">Aliquam diam consequat</a></h3>
-					<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
-					<ul class="actions">
-						<li><a href="#" class="button style1">Learn More</a></li>
-					</ul>
-				</section>
-			</div>
-			<div class="4u 12u(mobile)">
-				<section class="highlight">
-					<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-					<h3><a href="#">Nisl adipiscing sed lorem</a></h3>
-					<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
-					<ul class="actions">
-						<li><a href="#" class="button style1">Learn More</a></li>
-					</ul>
-				</section>
-			</div>
-			<div class="4u 12u(mobile)">
-				<section class="highlight">
-					<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-					<h3><a href="#">Mattis tempus lorem</a></h3>
-					<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+					<a href="#" class="image featured"><img src="{{event.pictureUrl}}" onerror="this.src='images/default-event.jpg'" alt="" border="5"/></a>
+					<h3><a href="#">{{event.title}}</a></h3>
+					<p>{{event.description}}</p>
 					<ul class="actions">
 						<li><a href="#" class="button style1">Learn More</a></li>
 					</ul>

@@ -4,8 +4,8 @@ app.factory('server', ['$http',
 	var urlBase = 'http://localhost:7588';
 	var server = {};
 
-	server.getEvents = function() {
-		return $http.get(urlBase + '/events');
+	server.getEvents = function(past) {
+		return $http.get(urlBase + '/events/date/' + past);
 	}
 	server.getOfficers = function() {
 		return $http.get(urlBase + '/officers');

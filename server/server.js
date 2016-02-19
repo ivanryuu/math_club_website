@@ -19,8 +19,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 // routes
-app.get('/events/:title?', function(req,res) {
-	eventHandler.get(req.params.title, res);
+app.get('/events/date/:past?', function(req,res) {
+	eventHandler.list(req.params.past, res);
 })
 
 app.post('/events', function(req, res) {

@@ -5,8 +5,12 @@ app.controller('EventsCtrl',
 
 		function loadEvents() {
 			server.getEvents().then(function(result) {
-				$scope.events = result.data;
+				$scope.upcomingEvents = result.data;
 			});
+
+			server.getEvents('past').then(function(result) {
+				$scope.pastEvents = result.data;
+			})
 		}
 
 		function init() {
