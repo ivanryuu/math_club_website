@@ -1,0 +1,98 @@
+<!-- Intro -->
+<div id="intro-wrapper" class="wrapper style1">
+	<div class="title">The Introduction</div>
+	<section id="intro" class="container">
+		<p class="style1">The UT Math club is all about ...</p>
+		<p class="style2">
+			enhancing the undergraduate math experience by exposing students to beautiful mathematics
+		</p>
+		<p class="style3">
+			The Undergraduate Mathematics Research Club, or Math Club, is a student group sponsored by the UT-Austin Mathematics Department and formed under the auspices of the Geometry Group RTG grant from the National Science Foundation. 
+		</p>
+		
+		<ul class="actions">
+			<li><a href="#" class="button style3 big">Proceed</a></li>
+		</ul>
+	</section>
+</div>
+
+<!-- Main -->
+<div class="wrapper style2">
+	<div class="title">The Details</div>
+	<div id="main" class="container">
+
+		<!-- Image -->
+			<a href="#" class="image featured">
+				<img src="images/campus.jpg" alt="" />
+			</a>
+
+		<!-- Features -->
+			<section id="features">
+				<header class="style1">
+					<h2>"Pure mathematics is, in its way, the poetry of logical ideas"</h2>
+					<p>-Albert Einstein</p>
+				</header>
+				<div class="feature-list">
+					<div class="row">
+						<div class="6u 12u(mobile)">
+							<section>
+								<h3 class="icon fa-users">Who can join</h3>
+								<p>
+									It is open to all students interested in mathematics, and especially caters to the UT-Austin pure and applied mathematics communities.
+								</p>
+							</section>
+						</div>
+						<div class="6u 12u(mobile)">
+							<section>
+								<h3 class="icon fa-calendar">When are the meetings</h3>
+								<p>
+									Meetings are every Wednesday from 5-7pm on the 12th floor lounge in RLM, 12.104
+								</p>
+							</section>
+						</div>
+					</div>
+					<div class="row">
+						<div class="6u 12u(mobile)">
+							<section>
+								<h3 class="icon fa-comment">Who will talk</h3>
+								<p>
+									Speakers include UT faculty, graduate students, and undergraduates, as well as researchers visiting as part of the RTG program.
+								</p>
+							</section>
+						</div>
+						<div class="6u 12u(mobile)">
+							<section>
+								<h3 class="icon fa-lightbulb-o">What else is offered</h3>
+								<p>
+									We also hold information sessions on topics like applying to graduate school, things to do over the summer, and how to use the computer resources in the math department.
+								</p>
+							</section>
+						</div>
+					</div>
+				</div>
+				<ul class="actions actions-centered">
+					<li><a href="#" class="button style1 big">Upcoming Events</a></li>
+					<li><a href="#" class="button style2 big">Join Mailing List</a></li>
+				</ul>
+			</section>
+
+	</div>
+</div>
+
+<!-- Highlights -->
+<div class="wrapper style3">
+	<div class="title">The Officers</div>
+	<div ng-if="officers" id="highlights" class="container">
+		<div class="row 150%">
+			<div class="3u 12u(mobile)" ng-repeat="officer in officers">
+				<section class="highlight">
+					<a href="#" class="image featured"><img src="{{officer.pictureUrl}}" onerror="this.src='images/default-officer.jpg'" alt="" /></a>
+					<h3><a href="#">{{officer.name}}</a></h3>
+					<h4>{{officer.position}}</h4>
+					<h6>{{officer.email}}</h6>
+					<p>{{officer.intro}}</p>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
